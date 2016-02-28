@@ -19,15 +19,15 @@ development:
 test:
   adapter: postgresql
   encoding: unicode
-  database: pettyurl_test
+  database: d4terkd13hf42u
   pool: 5
-  username: pettyurl
-  password:
+  username: vsfyaaxilqkhyt
+  password: rOM7oWCr6EBMdH6rxUMfM8eZHt
 
 production:
   adapter: postgresql
   encoding: unicode
-  database: pettyurl_production
+  database: d4terkd13hf42u
   pool: 5
-  username: pettyurl
-  password:
+  username: vsfyaaxilqkhyt
+  password: rOM7oWCr6EBMdH6rxUMfM8eZHt
