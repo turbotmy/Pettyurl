@@ -1,0 +1,43 @@
+<div class="table">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>GIVEN URL</th>
+        <th>SHORT LINK</th>
+        <th>CLICKS</th>
+        <th>STATS</th>
+        <th>CREATED</th>
+        <th>ACTION</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @Shortened_urls.each do |s| %>
+        <tr class="active">
+          <td><%= s.url %></td>
+          <td> <%= button_to ENV["base_url"]+'/'+s.unique_key,  
+              ENV["base_url"]+'/'+s.unique_key, 
+              :class => "btn btn-info", 
+              :method => :get,
+              form: {target: '_blank'} %></td>
+          <td><span class="badge"><%= s.use_count %></span></td>
+          <td>
+          <%= link_to ENV["base_url"]+'/link/'+s.unique_key + '/stats', 
+            :class => 'button white' do %>
+            <span class="badge"><%= s.stats.count %></span>
+          <% end if s.stats.count > 0 %>
+          </td>
+          <td><%= time_ago_in_words(s.created_at) %></td>
+          <td>
+              <%= button_to ENV["base_url"]+'/'+s.unique_key,
+              method: :delete, 
+              :class => "btn btn-danger",
+              data: { confirm: 'Are you sure?' } do %>
+              <span class="glyphicon glyphicon-remove"></span>
+              <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

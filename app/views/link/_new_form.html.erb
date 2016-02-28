@@ -1,0 +1,15 @@
+<div class="panel panel-info">
+   <div class="panel-heading"> Paste your long URL here:</div>
+   <div class="panel-body">
+        <%= form_for @link, url: {action: "create"} do |f| %>
+        <div class="form-group">
+            <%= f.text_field :longurl, :class => "form-control input-sm", :placeholder => "Enter or paste your long URL to shorten" %>
+        </div>
+        <div class="form-group">
+            <%= f.submit 'Shorten URL', :class => "btn btn-primary"%>
+        </div>
+        <% end %>
+   </div>
+   <div class="result></div>
+</div>
+

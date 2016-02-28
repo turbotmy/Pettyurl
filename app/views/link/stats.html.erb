@@ -1,0 +1,23 @@
+<div class="table">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>URL</th>
+        <th>TITLE</th>
+        <th>HTTP STATUS</th>
+        <th>CREATED</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @Shortened_urls.stats.each do |st| %>
+        <tr class="active">
+          <td><%= @Shortened_urls.url %></td>
+          <td><%= st.title %></td>
+          <td><%= st.httpstatus %></td>
+          <td><%= time_ago_in_words(st.created_at) %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
