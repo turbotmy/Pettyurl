@@ -45,6 +45,11 @@ end
 group :production do
     # Use postgresql as the database for Active Record
     gem 'pg'
+    gem 'rails_12factor'
+end
+
+platforms :ruby do # linux
+    gem 'unicorn'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
@@ -58,3 +63,5 @@ gem 'sidekiq'
 gem 'mechanize'
 # if you require 'sinatra' you get the DSL extended to Object
 gem 'sinatra', :require => nil
+
+
