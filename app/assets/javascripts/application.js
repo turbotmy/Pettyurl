@@ -27,8 +27,8 @@ $.validator.addMethod(
         "the long url should using http at the begining."
 );
 
-$('#new_form').ready(function() {
-  var password_validator = $('#new_form').validate({
+$('#new_link').ready(function() {
+  var password_validator = $('#new_link').validate({
     rules: {
       'link[longurl]': {
         required: true,
